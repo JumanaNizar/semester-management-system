@@ -1,0 +1,131 @@
+:root {
+  --navy: #14284b;
+  --navy-dark: #0d1b33;
+  --gold: #c9a227;
+  --bg: #f4f6fa;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e2e6ee;
+  --green: #1e8e5a;
+  --red: #c0392b;
+  --radius: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.5;
+}
+a { color: var(--navy); text-decoration: none; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Navbar ---------- */
+.navbar { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; }
+.navbar .container { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.brand { color: #fff; font-weight: 700; font-size: 1.15rem; letter-spacing: .3px; }
+.brand span { color: var(--gold); }
+.nav-links { display: flex; gap: 4px; list-style: none; flex-wrap: wrap; }
+.nav-links a { color: #dbe3f3; padding: 8px 12px; border-radius: 6px; font-size: .92rem; display: block; }
+.nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,.12); color: #fff; }
+.nav-links a.logout { background: var(--gold); color: var(--navy-dark); font-weight: 600; }
+.menu-btn { display: none; background: none; border: 1px solid rgba(255,255,255,.4);
+  color: #fff; font-size: 1.3rem; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+
+/* ---------- Layout ---------- */
+main { padding: 30px 0 50px; min-height: 70vh; }
+.page-title { font-size: 1.6rem; color: var(--navy); margin-bottom: 4px; }
+.page-sub { color: var(--muted); margin-bottom: 22px; }
+.card { background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; box-shadow: 0 2px 8px rgba(20,40,75,.05); }
+.grid { display: grid; gap: 18px; }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+/* ---------- Hero (home) ---------- */
+.hero { background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+  color: #fff; padding: 70px 0; text-align: center; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 12px; }
+.hero p { max-width: 640px; margin: 0 auto 26px; color: #cfd8ec; }
+.feature h3 { color: var(--navy); margin-bottom: 6px; }
+.feature p { color: var(--muted); font-size: .94rem; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-block; border: 0; cursor: pointer; font-size: .95rem;
+  padding: 10px 18px; border-radius: 8px; font-weight: 600; background: var(--navy); color: #fff; }
+.btn:hover { background: var(--navy-dark); }
+.btn-gold { background: var(--gold); color: var(--navy-dark); }
+.btn-gold:hover { background: #b08d1f; }
+.btn-danger { background: var(--red); }
+.btn-danger:hover { background: #962d22; }
+.btn-light { background: #e9edf5; color: var(--navy); }
+.btn-sm { padding: 6px 12px; font-size: .84rem; }
+
+/* ---------- Forms ---------- */
+.form-group { margin-bottom: 16px; }
+label { display: block; font-weight: 600; font-size: .9rem; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd2e0;
+  border-radius: 8px; font-size: .95rem; font-family: inherit; background: #fff; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+.form-row { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* ---------- Tables ---------- */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+th { background: var(--navy); color: #fff; text-align: left; padding: 11px 12px; white-space: nowrap; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: #f7f9fd; }
+
+/* ---------- Alerts and badges ---------- */
+.alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 18px; font-size: .94rem; }
+.alert-success { background: #e4f6ec; color: #14663f; border: 1px solid #b7e4cb; }
+.alert-error { background: #fde8e6; color: #8f2318; border: 1px solid #f3bdb7; }
+.badge { padding: 3px 10px; border-radius: 20px; font-size: .78rem; font-weight: 600; }
+.badge-blue { background: #e3ebfa; color: #1d3f84; }
+.badge-gold { background: #faf0cc; color: #7a5e08; }
+
+/* ---------- Login ---------- */
+.login-box { max-width: 420px; margin: 50px auto; }
+.login-box h2 { color: var(--navy); margin-bottom: 4px; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--navy-dark); color: #aab6d3; text-align: center; padding: 18px 0; font-size: .88rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .menu-btn { display: block; }
+  .navbar .container { flex-wrap: wrap; }
+  .nav-links { display: none; flex-direction: column; width: 100%; padding-bottom: 12px; }
+  .nav-links.open { display: flex; }
+  .hero h1 { font-size: 1.7rem; }
+}
+/* ---------- Part 2 additions ---------- */
+.page-head { display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.toolbar input, .toolbar select { width: auto; min-width: 180px; flex: 1; }
+.stat { border-left: 5px solid var(--gold); }
+.stat .num { font-size: 2rem; font-weight: 700; color: var(--navy); }
+.stat .label { color: var(--muted); font-size: .9rem; }
+.actions { display: flex; gap: 6px; }
+.section-gap { margin-top: 24px; }
+.note { background: #fff8e1; border: 1px solid #f1deA0; color: #6b5200;
+  padding: 10px 14px; border-radius: 8px; font-size: .88rem; margin-bottom: 16px; }
+@media (max-width: 600px) { .toolbar input, .toolbar select { width: 100%; } }
+
+
+/* ---------- Part 4 additions (login and roles) ---------- */
+.nav-user { color: #aab6d3; font-size: .85rem; padding: 8px 10px; }
+.nav-links form { display: inline; }
+.logout-btn { background: var(--gold); color: var(--navy-dark); border: 0; font-weight: 600;
+  padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: .92rem; }
+.logout-btn:hover { background: #b08d1f; }
+/* ---------- Part 4B additions (role-based display) ---------- */
+/* Read-only users: hide Add forms and Edit/Delete buttons */
+body.role-VIEWER main .section-gap:has(> form[method="post"]),
+body.role-VIEWER main .actions { display: none; }
+
+/* Lecturers: may only change the Timetable page */
+body.role-LECTURER:not(.page-timetable) main .section-gap:has(> form[method="post"]),
+body.role-LECTURER:not(.page-timetable) main .actions { display: none; }
+
+.pw-input { width: 150px !important; padding: 6px 8px !important; }
